@@ -1,13 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {BrowserRouter} from 'react-router-dom';
+import { GeneralContextProvider } from './context/GeneralContextProvider';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <GeneralContextProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </GeneralContextProvider>
   </React.StrictMode>
 );
 
