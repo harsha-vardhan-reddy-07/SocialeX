@@ -7,6 +7,8 @@ import Profile from './pages/Profile';
 import HomeLogo from './components/HomeLogo';
 import Navbar from './components/Navbar';
 import Notifications from './components/Notifications';
+import AuthProtector from './RouteProtectors/AuthProtector';
+import LoginProtector from './RouteProtectors/LoginProtector';
 
 
 function App() {
@@ -21,9 +23,9 @@ function App() {
 
       <Routes>
 
-          <Route exact path='/' element={<Home />}  />
-          <Route path='/landing' element = {<LandingPage />} />
-          <Route path='/profile' element = {<Profile />} />
+          <Route exact path='/' element={ <AuthProtector><Home/></AuthProtector>}  />
+          <Route path='/landing' element = {<LoginProtector> <LandingPage /> </LoginProtector>} />
+          <Route path='/profile' element = {<AuthProtector><Profile /></AuthProtector>} />
 
       </Routes>
 

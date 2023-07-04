@@ -6,15 +6,18 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from 'react-router-dom';
 import { GeneralContextProvider } from './context/GeneralContextProvider';
+import AuthenticationContextProvider from './context/AuthenticationContextProvider';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <GeneralContextProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </GeneralContextProvider>
+    <BrowserRouter>
+      <AuthenticationContextProvider>
+        <GeneralContextProvider>
+            <App />
+        </GeneralContextProvider>
+      </AuthenticationContextProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
