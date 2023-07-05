@@ -17,7 +17,7 @@ const Notifications = () => {
                 <hr className="notificationsHr" />
                 
                 <div className="notificationsBody">
-                    
+                    <p>No new notifications</p>
                 </div>
             </div>
         </div>

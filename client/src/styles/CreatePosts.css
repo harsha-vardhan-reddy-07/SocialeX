@@ -10,6 +10,11 @@
     background-color: rgba(0,0,0,0.4);
 }
 
+.form-select{
+    background-color: rgba(0, 255, 255, 0);
+    color: rgba(8, 82, 147, 0.63);
+}
+
 .createPostContainer{
     z-index: 999;
     padding: 1rem;
@@ -20,8 +25,8 @@
     width: 30vw;
     height: fit-content;
     max-height: 90vh;
-    background-color: rgba(246, 251, 254, 0.361);
-    backdrop-filter: blur(15px);
+    background-color: rgba(221, 236, 246, 0.616);
+    backdrop-filter: blur(20px);
     border: 1px solid #b4b6b8;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
 }
@@ -47,27 +52,41 @@
     margin-bottom: 1rem;
 }
 
-.uploadImgBox input{
-    display: none;
+.uploadBox{
+    width: 100%;
 }
 
-.uploadImgBox label{
-    text-align: center;
-    padding-top: 8vh;
+.uploadBox #uploadPostFile{
+    width: 100%;
     color: rgba(8, 82, 147, 0.63);
-    height: fit-content;
-    min-height: 20vh;
-    width: 28vw;
-    border: 1px solid #c0c1c3;
-    cursor: pointer;
-    border-radius: 5px;
 }
+#uploadPostFile::-webkit-file-upload-button {
+    display: none;
+  }
+#uploadPostFile::before {
+    content: 'Upload Image/Video';
+    display: inline-block;
+    background: linear-gradient(top, #f9f9f9, #e3e3e3);
+    border: 1px solid #c0c1c3;
+    border-radius: 3px;
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 10pt;
+    margin-right: 10px;
+  }
+
+
+
 
 .descriptionInput input{
     border-color: #c0c1c3;
     width: 100%;
 }
-.descriptionInput label{
+.descriptionInput label, .postLocation label{
     color: rgba(8, 82, 147, 0.63);
 }
 
@@ -78,9 +97,9 @@
     align-items: center;
 }
 .createPostBody form button{
-    width: 40%;
+    width: fit-content;
     border: none;
-    padding: 8px 0;
+    padding: 8px 30px;
     background-color: rgba(6, 112, 234, 0.479);
     color: aliceblue;
     font-weight: 500;

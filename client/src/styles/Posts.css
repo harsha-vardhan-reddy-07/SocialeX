@@ -106,8 +106,8 @@
 .placeiconcol{
     display: flex;
     flex-direction: row; 
-    position: absolute;
-    right: 2vw;
+    /* position: absolute;
+    right: 2vw; */
 }
 .supportCount{
     font-size: 0.6rem;
@@ -160,35 +160,46 @@
 }
 
 
-.identitydataWithBtn, .descdataWithBtn{
-    display: flex;
-    flex-direction: column;
+.commentsContainer{
+    width: 80%;
+    height: fit-content;
+    margin-left: 2%;
 }
 
-.viewMore{
-    width: 80px;
-    float: right;
-    position: relative;
-    left: 0vw;
+.commentsContainer h5{
+   font-size: 1.1rem;
+}
+.commentsBody{
+    margin-left: 5%;
+}
+
+.commentsBody .comments{
+    max-height: 80px;
+    overflow-y: scroll;
+}
+.commentsBody p{
+    font-size: 0.8rem;
+    margin: 0;
+    margin-bottom: 5px;
+}
+.commentsContainer .makeComment{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    /* margin-top: 10px; */
+}
+.commentsContainer .makeComment input{
+    padding: 5px;
+    font-size: 0.8rem;
+    height: 30px;
+}
+.commentsContainer .makeComment button{
+    padding: 0px 10px 2px 10px;
+    height: 30px;
     border: none;
-    color: rgb(151, 156, 156);
-    background-color: rgba(220, 204, 220, 0);
-    opacity: 0.8;
-    cursor: pointer;
+    font-size: 0.8rem;
 }
 
-
-.genpost-linkdiv{
-    display: flex;
-    flex-direction: row;
-    margin-left: 4vw;
-}
-.genPostLink{
-    font-size: 1rem;
-    color: #4ebff0;
-    text-decoration: none;
-    font-family: 'Mukta', sans-serif;
-}
 
 
 @media screen and (max-width: 500px){

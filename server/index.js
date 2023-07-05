@@ -10,6 +10,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 import authRoutes from './routes/Route.js';
+import SocketHandler from './SocketHandler.js';
 
 
 // config
@@ -41,8 +42,9 @@ const io = new Server(server, {
 
 io.on("connection", (socket) =>{
     console.log("User connected");
-})
 
+    SocketHandler(socket);
+})
 
 
 // mongoose setup

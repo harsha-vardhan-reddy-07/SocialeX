@@ -25,12 +25,13 @@ function App() {
 
           <Route exact path='/' element={ <AuthProtector><Home/></AuthProtector>}  />
           <Route path='/landing' element = {<LoginProtector> <LandingPage /> </LoginProtector>} />
-          <Route path='/profile' element = {<AuthProtector><Profile /></AuthProtector>} />
+          <Route path='/profile/:id' element = {<AuthProtector><Profile /></AuthProtector>} />
 
       </Routes>
 
       <CreatePost  />
       <Notifications />
+      
       
     </div>
   );
