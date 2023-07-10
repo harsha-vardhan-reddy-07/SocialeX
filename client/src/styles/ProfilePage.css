@@ -115,6 +115,12 @@
     padding-bottom: 30px;
 }
 
+.deletePost{
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+
 
 
 .profileFollowContainer{

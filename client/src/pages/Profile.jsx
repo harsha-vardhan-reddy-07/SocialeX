@@ -104,6 +104,18 @@ const [comment, setComment] = useState('');
         setComment('');
     }
 
+const handleDeletePost = async (postId) =>{
+    await socket.emit('delete-post', {postId});
+}
+
+useEffect(()=>{
+
+  socket.on('post-deleted', async ({posts})=>{
+    
+    setPosts(posts)
+  })
+
+},[socket])
 
 
   return (
@@ -204,6 +216,7 @@ const [comment, setComment] = useState('');
                     <img src={post.userPic} alt="" className="userpic" />
                     <h3 className="usernameTop">{post.userName}</h3>
                 </div>
+                <button className='btn btn-danger deletePost' onClick={()=> handleDeletePost(post._id)}>Delete</button>
             </div>
 
             { post.fileType === 'photo'?

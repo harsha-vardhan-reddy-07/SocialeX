@@ -12,8 +12,9 @@ const HomeLogo = () => {
   const [search, setSearch] = useState('');
   const [searchedUser, setSearchedUser] = useState();
 
-  const handleSearch =async ()=>{
-    socket.emit('user-search', {username: search})
+  const handleSearch = async ()=>{
+    await socket.emit('user-search', {username: search});
+    setSearch('')
   }
 
   useEffect(()=>{
@@ -27,12 +28,12 @@ const HomeLogo = () => {
     <div className="LogoSearch">
        <img className='logoImg' src={logoimg} alt="" />
        <div className="Search">
-           <input type="text" placeholder='Search' onChange={(e)=> {setSearch(e.target.value)}} />
+           <input type="text" placeholder='Search' onChange={(e)=> {setSearch(e.target.value)}} value={search} />
            <div className="s-icon" onClick={handleSearch}>
               <TbSearch />
            </div>
        </div>
-       <Search searchedUser={searchedUser} />
+       <Search searchedUser={searchedUser} setSearchedUser={setSearchedUser} />
    </div>
   )
 }

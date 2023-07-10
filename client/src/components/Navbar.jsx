@@ -11,7 +11,7 @@ import axios from 'axios';
 
 const Navbar = () => {
 
-  const {isCreatPostOpen, setIsCreatePostOpen, isNotificationsOpen, setNotificationsOpen} = useContext(GeneralContext);
+  const {isCreatPostOpen, setIsCreatePostOpen, setIsCreateStoryOpen, isNotificationsOpen, setNotificationsOpen} = useContext(GeneralContext);
 
   const navigate = useNavigate();
 
@@ -23,8 +23,8 @@ const Navbar = () => {
     <>
     <div className="Navbar">
         <BiHomeAlt className="homebtn btns" onClick={()=> navigate('/')} />
-        <BsChatSquareText  className="chatbtn btns" />
-        <CgAddR className="createPostbtn btns" onClick={()=> setIsCreatePostOpen(!isCreatPostOpen)} />
+        <BsChatSquareText  className="chatbtn btns" onClick={()=> navigate('/chat')} />
+        <CgAddR className="createPostbtn btns" onClick={()=> {setIsCreatePostOpen(!isCreatPostOpen); setIsCreateStoryOpen(false)}} />
         <TbNotification className="Notifybtn btns" onClick={()=> setNotificationsOpen(!isNotificationsOpen)}/>
         <img className="profile" src={profilePic} alt="" onClick={()=> navigate(`/profile/${userId}`)} />
     </div>

@@ -23,7 +23,7 @@ const Post = () => {
         fetchPosts();
       }, []);
     
-      const fetchPosts = async () => {
+      const fetchPosts = async () => { 
         try {
           const response = await axios.get('http://localhost:6001/fetchAllPosts');
           const fetchedPosts = response.data;
@@ -81,7 +81,7 @@ const Post = () => {
   return (
     <div className='postsContainer'>
 
-    {posts.map((post) => {
+    {posts ? posts.map((post) => {
 
         return(
 
@@ -174,7 +174,7 @@ const Post = () => {
         </div>
         )
 
-    })}
+    }) : <></>}
 
     </div>
   )

@@ -16,7 +16,7 @@ const CreatePost = () => {
     const [postDescription, setPostDescription] = useState('');
     const [postLocation, setPostLocation] = useState('');
     const [postFile, setPostFile] = useState(null);
-
+ 
     const [uploadProgress, setUploadProgress] = useState();
 
     if (uploadProgress === 100){
